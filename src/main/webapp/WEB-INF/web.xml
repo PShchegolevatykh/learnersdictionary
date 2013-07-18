@@ -5,7 +5,28 @@
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
- 
+	
+<!-- 	<listener> -->
+<!--         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class> -->
+<!--     </listener> -->
+    
+    <listener>
+    	<listener-class>com.pshchegolevatykh.learnersdictionary.core.security.CustomEnvironmentLoaderListener</listener-class>
+	</listener>
+ 	
+ 	<filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping> 
+ 	
 	<display-name>JavaServerFaces</display-name>
  
 	<!-- Change to "Production" when you are ready to deploy -->
