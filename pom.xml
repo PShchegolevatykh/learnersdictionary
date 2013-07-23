@@ -33,22 +33,27 @@
 			<artifactId>jsf-facelets</artifactId>
 			<version>1.1.14</version>
 			<scope>provided</scope>
-		</dependency>     
+		</dependency>
 		<dependency>
 			<groupId>net.sf.dozer</groupId>
 			<artifactId>dozer</artifactId>
 			<version>5.4.0</version>
 		</dependency>
 		<dependency>
-  			<groupId>org.apache.shiro</groupId>
-  			<artifactId>shiro-web</artifactId>
-  			<version>1.2.2</version>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>1.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>1.5</version> <!-- Or 1.6-SNAPSHOT -->
 		</dependency>
 	</dependencies>
 </project>
