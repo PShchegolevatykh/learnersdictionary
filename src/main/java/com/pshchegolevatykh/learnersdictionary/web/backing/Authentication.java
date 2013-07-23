@@ -15,7 +15,7 @@ import org.omnifaces.util.Messages;
 
 @ManagedBean
 @RequestScoped
-public class Login {
+public class Authentication {
     public static final String HOME_URL = "hello.xhtml";
     
     private String username;
@@ -60,7 +60,7 @@ public class Login {
 
 
 
-    public void submit() throws IOException {
+    public void login() throws IOException {
 	 // Example using most common scenario of username/password pair:
    
         try {
@@ -71,5 +71,11 @@ public class Login {
 	    Messages.addGlobalError("Unknown user, please try again");
 	    e.printStackTrace();
 	}
+    }
+    
+    public void logout() throws IOException {
+	SecurityUtils.getSubject().logout();
+        Faces.invalidateSession();
+        Faces.redirect(HOME_URL);
     }
 }

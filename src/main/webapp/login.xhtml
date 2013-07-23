@@ -16,23 +16,23 @@
 		<h:form id="login">
 			<h:panelGrid columns="3">
 				<h:outputLabel for="username" value="Username" />
-				<h:inputText id="username" required="true" value="#{login.username}">
+				<h:inputText id="username" required="true" value="#{authentication.username}">
 					<f:ajax event="blur" render="m_username" />
 				</h:inputText>
 				<h:message id="m_username" for="username" />
 				
 				<h:outputLabel for="password" value="Password" />
-				<h:inputSecret id="password" value="#{login.password}" required="true">
+				<h:inputSecret id="password" value="#{authentication.password}" required="true">
 					<f:ajax event="blur" render="m_password" />
 				</h:inputSecret>
 				<h:message id="m_password" for="password" />
 				
 				<h:outputLabel for="rememberMe" value="Remember Me" />
-				<h:selectBooleanCheckbox id="remeberMe" value="#{login.remember}" />
+				<h:selectBooleanCheckbox id="remeberMe" value="#{authentication.remember}" />
 				<h:panelGroup />
 				
 				<h:panelGroup />
-				<h:commandButton ajax="false" value="Login" action="#{login.submit}">
+				<h:commandButton ajax="false" value="Login" action="#{authentication.login}">
 					<f:ajax execute="@form" render="@form" />
 				</h:commandButton>
 				<h:messages globalOnly="true" layout="table" />

@@ -12,6 +12,9 @@
     
     <h:body>
     	<h2>Hello World Example</h2>
+    	<h:form>
+       		<h:commandButton value="Logout" action="#{authentication.logout}" />
+    	</h:form>
     	<p>The message was: #{hello.message}</p>
     	<ui:repeat value = "#{hello.categories}" var="category">
     		<p>#{category.name}</p>
